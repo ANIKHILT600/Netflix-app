@@ -113,6 +113,7 @@ systemctl enable docker
 systemctl start docker
 
 usermod -aG docker ubuntu
+usermod -aG docker jenkins
 
 docker --version
 
