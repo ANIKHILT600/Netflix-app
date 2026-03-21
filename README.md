@@ -1,4 +1,4 @@
-﻿# Netflix-app
+<img width="1027" height="843" alt="Jenkins-system-Extended Email Notification" src="https://github.com/user-attachments/assets/0229c279-a557-40a8-b077-c710b1a5321f" />﻿# Netflix-app
 
 This guide provides a comprehensive walkthrough for deploying a Netflix clone application using modern DevOps practices. The deployment pipeline leverages Jenkins for continuous integration and continuous delivery (CI/CD), Docker for containerization, and Kubernetes for orchestration. Infrastructure and application metrics are monitored in real-time using Prometheus, Grafana, and Node Exporter, enabling proactive system observability and performance management.
 
@@ -597,6 +597,8 @@ http://Prometheus-Grafana_public_ip:9090/targets
 
 If you go to targets, you should see - Prometheus and node_exporter targets now.
 
+
+
 ### 4E — Install Grafana
 
 Install Grafana on Ubuntu 24.04
@@ -750,6 +752,8 @@ You will see Jenkins is added to it in prometheus target now.
 
 Note: If your jenkins target is DOWN, please add SG inbound rule on "jenkins-Sonar" and add port 8080 for prometheus-grafana_public_IP. Then again follow step 5 and 6.
 
+<img width="1900" height="782" alt="Grafana-Dashboard" src="https://github.com/user-attachments/assets/df23bc52-7c3c-4567-bb2a-5cc058150705" />
+
 
 ### 5B — Configure Grafana dashboard
 
@@ -792,14 +796,13 @@ Once the plugin is installed in Jenkins, click on manage Jenkins –> configure 
 
 - Click on Apply and save.
 
+<img width="966" height="853" alt="Jenkins-system-Email Notification" src="https://github.com/user-attachments/assets/967a11c4-962a-4c0d-9bae-c1664e89f5f1" />
+
 Add credentials:
 - Click on Manage Jenkins
 - credentials and add your mail username and generated password
 - ID : mail
 - Description : mail
-
-
-This is to just verify the mail configuration
 
 Now under the Extended E-mail Notification section configure the details as shown in the below
 - SMTP server : smtp.gmail.com
@@ -807,6 +810,9 @@ Now under the Extended E-mail Notification section configure the details as show
 - Advanced --> credentials --> select "mail"
 - Make sure the "Use SSL" checkbox is explicitly checked here
 - Click on Apply and save.
+
+<img width="1027" height="843" alt="Jenkins-system-Extended Email Notification" src="https://github.com/user-attachments/assets/72cde2e0-bc9c-43fe-bc4c-bc41c1e9173c" />
+
 
 ```
 post {
@@ -895,6 +901,8 @@ In the Sonarqube Dashboard add a quality gate also:
 - Name : jenkins
 - URL : http://Jenkins-sonar_public_IP:8080/sonarqube-webhook/
 - create
+
+<img width="1518" height="476" alt="Sonarqube-webhook" src="https://github.com/user-attachments/assets/5d7c375f-457c-4029-a038-43a1528a3ac5" />
 
 
 Let’s go to our Pipeline and add the script in our Pipeline Script.
@@ -1196,15 +1204,6 @@ To verify that the worker nodes have joined the cluster, run the following comma
 kubectl get nodes
 ```
 
-### Optional (not required)
-```
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
-# in case your in root exit from it and run below commands
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-```
 
 ### 11C — Config kubernetes secret file for Jenkins
 
@@ -1496,3 +1495,9 @@ pipeline{
     }
 }
 ```
+
+
+* Total VM's:
+<img width="1193" height="292" alt="AWS-Ec2&#39;s" src="https://github.com/user-attachments/assets/0454e129-6127-4c08-b956-a5652607922b" />
+
+*
