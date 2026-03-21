@@ -1,5 +1,4 @@
-<img width="1027" height="843" alt="Jenkins-system-Extended Email Notification" src="https://github.com/user-attachments/assets/0229c279-a557-40a8-b077-c710b1a5321f" />﻿# Netflix-app
-
+# Netflix-app
 This guide provides a comprehensive walkthrough for deploying a Netflix clone application using modern DevOps practices. The deployment pipeline leverages Jenkins for continuous integration and continuous delivery (CI/CD), Docker for containerization, and Kubernetes for orchestration. Infrastructure and application metrics are monitored in real-time using Prometheus, Grafana, and Node Exporter, enabling proactive system observability and performance management.
 
 <img width="1876" height="925" alt="Netflix-app" src="https://github.com/user-attachments/assets/b114b299-1a1b-485c-89be-2beca92af3f3" />
